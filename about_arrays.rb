@@ -27,18 +27,18 @@ class AboutArrays < Neo::Koan
     assert_equal :peanut, array[0]
     assert_equal :peanut, array.first
     assert_equal :jelly, array[3]
-    assert_equal __, array.last
-    assert_equal __, array[-1]
-    assert_equal __, array[-3]
+    assert_equal :jelly, array.last
+    assert_equal :jelly, array[-1]
+    assert_equal :butter, array[-3]
   end
 
   def test_slicing_arrays
     array = [:peanut, :butter, :and, :jelly]
 
-    assert_equal __, array[0,1]
-    assert_equal __, array[0,2]
-    assert_equal __, array[2,2]
-    assert_equal __, array[2,20]
+    assert_equal [:peanut], array[0,1]
+    assert_equal [:peanut, :butter], array[0,2]
+    assert_equal [:and, :jelly], array[2,2]
+    assert_equal [:and, :jelly], array[2,20]
     assert_equal __, array[4,0]
     assert_equal __, array[4,100]
     assert_equal __, array[5,0]
